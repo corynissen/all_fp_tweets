@@ -17,16 +17,16 @@ shinyServer(function(input, output) {
   df$city <- city.key[match(df$search_term, city.key[,2]),1]
 
   data <- reactive({    
-    if(input$refresh > 0){
-      isolate({
-        source("update_data.R")
-        load("all_fp.Rdata")
-        df$is.rt <- as.logical(df$is.rt)
-        df$epoch <- as.numeric(df$epoch)
-        df$created.at3 <- as.Date(df$created.at2)
-        df$city <- city.key[match(df$search_term, city.key[,2]),1]
-      })
-    }
+    ## if(input$refresh > 0){
+    ##   isolate({
+    ##     source("update_data.R")
+    ##     load("all_fp.Rdata")
+    ##     df$is.rt <- as.logical(df$is.rt)
+    ##     df$epoch <- as.numeric(df$epoch)
+    ##     df$created.at3 <- as.Date(df$created.at2)
+    ##     df$city <- city.key[match(df$search_term, city.key[,2]),1]
+    ##   })
+    ## }
     df <- df[order(df$epoch, decreasing=TRUE),]
     if(!input$rt){
       df <- subset(df, !is.rt)
