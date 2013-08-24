@@ -20,9 +20,9 @@ shinyUI(pageWithSidebar(
       selected = "All"),
     checkboxInput("rt", "Show Retweets", FALSE),
     br(),
-    uiOutput("day.slider"),
-    br(),
-    actionButton("refresh", "Click to Update Data (takes about a minute)")
+    uiOutput("day.slider")##,
+##    br(),
+##    actionButton("refresh", "Click to Update Data (takes about a minute)")
   ),
   
   mainPanel(
