@@ -20,7 +20,9 @@ shinyUI(pageWithSidebar(
       selected = "All"),
     checkboxInput("rt", "Show Retweets", FALSE),
     br(),
-    uiOutput("day.slider")##,
+    uiOutput("day.slider"),
+    br(),
+    textInput("search.term", "Subset Data By Search Term", "")
 ##    br(),
 ##    actionButton("refresh", "Click to Update Data (takes about a minute)")
   ),
