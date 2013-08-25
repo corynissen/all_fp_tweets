@@ -39,6 +39,9 @@ shinyServer(function(input, output) {
       
       df <- subset(df, city==input$city)
     }
+    if(input$search.term != ""){
+      df <- subset(df, grepl(tolower(input$search.term), tolower(df$text)))
+    }
     
     df
   })
@@ -58,7 +61,8 @@ shinyServer(function(input, output) {
     max.date <- max(df$created.at3)
     max.value <- ceiling(as.numeric((max.date - min.date)))
     return(sliderInput("day.slider.reactive", "Date range (back from present)",
-                       min=1, max=max.value, value=7))
+                       min=1, max=max(c(2, max.value)), value=max(c(1,
+                                                 min(c(7, max.value))))))
   })  
 
   output$caption <- renderText({
