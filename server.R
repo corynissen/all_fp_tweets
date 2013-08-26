@@ -9,7 +9,11 @@ shinyServer(function(input, output) {
   city.key <- matrix(c("Philadelphia", "philadelphia_fp",
                            "Boston", "boston_food_poisoning",
                            "San Francisco", "sanfran_food_poisoning",
-                           "Minneapolis", "minnesota_food_poisoning"),
+                           "Minneapolis", "minnesota_food_poisoning",
+                           "Los Angeles", "la_food_poisoning",
+                           "Houston", "houston_food_poisoning",
+                           "Phoenix", "phoenix_food_poisoning",
+                           "Jacksonville", "jacksonville_food_poisoning"),
                          ncol=2, byrow=T)
   df$is.rt <- as.logical(df$is.rt)
   df$epoch <- as.numeric(df$epoch)
