@@ -7,7 +7,9 @@ library(stringr)
 tablename <- "cory_tweets"
 searchterm <- "minnesota_food_poisoning"
 searchterms <- c("minnesota_food_poisoning", "boston_food_poisoning",
-                 "philadelphia_fp", "sanfran_food_poisoning")
+                 "philadelphia_fp", "sanfran_food_poisoning",
+                 "la_food_poisoning", "houston_food_poisoning",
+                 "phoenix_food_poisoning", "jacksonville_food_poisoning")
 max.id <- "0"
 
 update.df <- function(df, tablename, searchterm){
