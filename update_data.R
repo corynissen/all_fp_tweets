@@ -1,4 +1,5 @@
 
+options(scipen=100)
 library(lubridate)
 library(RJSONIO)
 library(RCurl)
